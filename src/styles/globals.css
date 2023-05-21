@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,11 +18,47 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-slate-800;
+  @apply font-mono;
+  @apply text-white;
 }
+
+.section-1{
+  justify-content: space-evenly;
+}
+
+.section-1-heading{
+  height: 10%;
+}
+
+.section-1-content{
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+.section-2 {
+  background: linear-gradient(270deg, #F97316, #FFB627, #E2711D);
+  background-size: 200% 200%;
+  animation: Gradient 5s ease infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes Gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.section-2-content{
+  
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
