@@ -1,18 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Storage } from '@google-cloud/storage';
 
-// Get credentials from environment variables
-const credentials = JSON.parse(process.env.GCP_CREDENTIALS!);
-// Create a new storage instance with credentials
-const storage = new Storage({ credentials });
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
+  req: NextApiRequest,
+  res: NextApiResponse
   ) {
-  try {
+    try {
+    // Get credentials from environment variables
+    const credentials = await JSON.parse(process.env.NEXT_PUBLIC_GCP_CREDENTIALS!);
+    // Create a new storage instance with credentials
+    const storage = new Storage({ credentials });
     // Get bucket name from environment variables
-    const bucketName = process.env.GOOGLE_CLOUD_BUCKET || "";
+    const bucketName = process.env.NEXT_PUBLIC_GOOGLE_CLOUD_BUCKET || "";
 
     // Get file name from request body
     const fileName = req.body.fileName;
@@ -49,6 +49,7 @@ export default async function handler(
       
   
     } catch (error: any) {
+      console.log(error)
       res.status(500).json({ error: "Error while loading files." });
       res.end();
     }
