@@ -62,3 +62,41 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+.loader {
+  border-top-color: #F97316;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.dashboard-header{
+  height: 8vh;
+}
+.summarziations-list{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.dashboard-main{
+  overflow: hidden;
+  height: 92vh;
+  width: 100%;
+}
+
+.dashboard-header svg{
+  transform: scale(0.8);
+}
+
+.dashboard-sidebar{
+  min-height: 30vh;
+}

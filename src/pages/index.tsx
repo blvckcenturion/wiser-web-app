@@ -125,7 +125,7 @@ export default function Home() {
             ) : (
               <p className="mb-2">Already have an account?</p>
             )}
-            <button onClick={() => setShowLogin(!showLogin)} className="bg-orange-500 hover:bg-orange-600 text-black py-2 px-4 rounded transition duration-200 ease-in-out">
+            <button onClick={() => setShowLogin(!showLogin)} className="bg-blue-500 hover:bg-blue-700 text-black py-2 px-4 rounded transition duration-200 ease-in-out">
               {showLogin ? "Create a new account" : "Log into an existing account"}
             </button>
           </div>
