@@ -47,8 +47,8 @@ class SummarizationService{
             youtube_video_url: ytUrl
             };
 
-            // Set the timeout duration in milliseconds (e.g., 60 seconds)
-            const timeoutDuration = 60000;
+            // Set timeout duration to 10 minutes
+            const timeoutDuration = 600000;
 
             // Send post request to create a new summarization with timeout
             const response: AxiosResponse = await axios.post(url, data, {
